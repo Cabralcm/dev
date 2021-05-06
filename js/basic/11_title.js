@@ -56,11 +56,31 @@ function titleCase(str){
 function titleCase(str){
 	let convertToArray = str.toLowerCase().split(" "); // convert all characters to lowercase, and convert into array
 	let result = convertToArray.map(
-		function(val){
-
+	function(val){
+		return val.replace(val.charAt(0), val.charAt(0).toUpperCase());
+	});
+	return result.join(" ");
 }
 
+// RegExp
+
+function titleCase(str){
+	return str.toLowerCase().replace(/(^|\s)\S/g , L => L.toUpperCase());
+}
+
+/* Find all non-whitespace characters - \S
+Within the Brackets and separated by the OR function:  " | "
+- At the beginning of the string - ^ 
+- OR: after any whitespace character \s
+Since the (^|\s) is equal to:
+^\S (at the beginning of the string) OR \s\S (after any whitespace character)
+
+The g modifier searchers for other such word pattern in the whole string and replaces them
+
+solution works with national symbols and accented letters too!
+*/
 
 
+// Test case
 
 console.log(titlecase("I'm a little tea pot!"));

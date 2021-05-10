@@ -36,3 +36,16 @@ function mutation(arr){
 			return arr[0].toLowerCase().indexOf(letter) != -1;
 		});
 }
+
+// Solution 3 - Uses Includes and Recursion
+
+function mutation(arr){
+	function calcMutation([target, test], i = 0){
+		target = target.toLowerCase()
+		return  i>= test.length ? true 
+			: !target.includes(test[i]) ? false 
+			: mutation([target, test], i + 1);
+	}
+	return calcMutation(arr);
+}
+

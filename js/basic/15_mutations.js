@@ -49,3 +49,4 @@ function mutation(arr){
 	return calcMutation(arr);
 }
 
+mutation(["hello", "hey"]);

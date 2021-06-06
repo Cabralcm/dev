@@ -47,3 +47,8 @@ function add(x) {
 }
 add(10)(20)(30);
 
+## Function Example 2
+
+function add(x){
+	return y => z => x + y + z;
+}
